@@ -247,21 +247,24 @@
 </section>
 
 <!-- Popup Form -->
-<div id="popup" class="popup hidden">
-  <div class="popup-content">
-    <form action="https://formspree.io/f/xeokovjq" method="POST" onsubmit="showMessage(event)">
-      <img id="productImage" src="" alt="Product"/>
-      <input type="text" name="name" placeholder="Your Name" class="w-full mb-2 px-3 py-2 border rounded" required/>
-      <input type="email" name="email" placeholder="Your Email" class="w-full mb-2 px-3 py-2 border rounded" required/>
-      <input type="text" name="phone" placeholder="Phone Number" class="w-full mb-2 px-3 py-2 border rounded" required/>
-      <input type="text" name="address" placeholder="Address" class="w-full mb-2 px-3 py-2 border rounded" required/>
+<div id="popup" class="popup hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+  <div class="popup-content bg-white p-6 rounded shadow-lg max-w-md w-full relative">
+    <form id="orderForm">
+      <img id="productImage" src="" alt="Product" class="w-full h-40 object-cover rounded mb-4" />
+      <input type="text" name="name" placeholder="Your Name" required class="w-full mb-2 px-3 py-2 border rounded" />
+      <input type="email" name="email" placeholder="Your Email" required class="w-full mb-2 px-3 py-2 border rounded" />
+      <input type="text" name="phone" placeholder="Phone Number" required class="w-full mb-2 px-3 py-2 border rounded" />
+      <input type="text" name="address" placeholder="Address" required class="w-full mb-2 px-3 py-2 border rounded" />
       <textarea name="message" placeholder="Message (optional)" class="w-full mb-2 px-3 py-2 border rounded"></textarea>
       <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded w-full mb-2">Purchase</button>
       <button type="button" onclick="closeForm()" class="bg-gray-500 text-white px-4 py-2 rounded w-full">Back</button>
-      <div id="confirmation" class="confirmation hidden">🎉 Congratulations! Your request has been sent. Please wait for an incoming message later.</div>
+      <div id="confirmation" class="hidden text-green-600 mt-4 font-semibold text-center">
+        🎉 Your order has been sent successfully!
+      </div>
     </form>
   </div>
 </div>
+
 
 <script>
   function initializeTabs(tabContainerId, barId, productsContainerId) {
@@ -302,6 +305,45 @@
     document.getElementById('confirmation').classList.remove('hidden');
     setTimeout(closeForm, 3000);
   }
+</script>
+<script>
+  // Open the popup with selected product image
+  function openForm(button) {
+    const imageUrl = button.getAttribute("data-img");
+    document.getElementById("productImage").src = imageUrl;
+    document.getElementById("popup").classList.remove("hidden");
+    document.getElementById("confirmation").classList.add("hidden"); // reset message
+  }
+
+  // Close the popup
+  function closeForm() {
+    document.getElementById("popup").classList.add("hidden");
+    document.getElementById("orderForm").reset(); // reset form fields
+  }
+
+  // Handle form submission with fetch (AJAX)
+  document.getElementById("orderForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // stop default form submission
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch("https://formspree.io/f/xeokovjq", {
+      method: "POST",
+      body: formData,
+      headers: { Accept: "application/json" },
+    })
+    .then(response => {
+      if (response.ok) {
+        document.getElementById("confirmation").classList.remove("hidden");
+        form.reset();
+      } else {
+        alert("❌ Failed to send your order. Please try again later.");
+      }
+    })
+    .catch(() => {
+      alert("⚠️ Network error. Please check your internet connection.");
+    });
+  });
 </script>
 
 </body>
