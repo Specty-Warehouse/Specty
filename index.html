@@ -198,36 +198,59 @@
 <!-- Hobby Shop Category -->
 <section class="category-section">
   <div class="category-background"
-       style="background-image:url('https://media.tenor.com/6j0SImNS50UAAAAM/itachi.gif');"></div>
+       style="background-image:url('https://i.pinimg.com/originals/c0/26/65/c02665e40a4224f575af74f7bf1e89df.png');"></div>
   <div class="category-overlay">
     <h2 class="text-3xl font-bold mb-4">Hobby Shop</h2>
     <div id="hobbyTabs" class="tabs">
       <div class="tab active" data-sub="all">All</div>
       <div class="tab" data-sub="katana">Katana</div>
-      <div class="tab" data-sub="paintings">Paintings/Posters</div>
-      <div class="tab" data-sub="models">Models</div>
-      <div class="tab" data-sub="trading">Trading Pack/Cards</div>
-      <div class="tab" data-sub="wallets">Wallets</div>
+      <div class="tab" data-sub="bracelets">Bracelets</div>
       <div class="tab" data-sub="keychains">Keychains</div>
-      <div class="tab" data-sub="Bracelets">Bracelets</div>
-      <div class="tab" data-sub="accessories">Wearing Accessories</div>
+      <div class="tab" data-sub="trading">Trading Pack/Cards</div>
       <div id="hobbyBar" class="tab-bar"></div>
     </div>
 
-    <!-- Scrollable Product Row -->
     <div class="flex space-x-6 overflow-x-auto pb-4" id="hobbyProducts">
-      <!-- All + Katana -->
-      <!-- (multiple product cards similar to earlier) -->
-      <div class="product-card" data-sub="all katana">…</div>
-      <!-- All + Bracelets -->
-      <div class="product-card" data-sub="all Bracelets">…</div>
-      <!-- All + Keychains -->
-      <div class="product-card" data-sub="all keychains">…</div>
-      <!-- All + Trading -->
-      <div class="product-card" data-sub="all trading">…</div>
+      <!-- Katana items -->
+      <div class="product-card" data-sub="all katana">
+        <img src="https://www.medieval-shop.co.uk/89398-large_default/zoro-s-black-enma-bamboo-katana-one-piece.jpg" alt="Zoro's Legendary Black Enma">
+        <h3 class="font-bold text-lg mt-2">Zoro's Legendary Black Enma</h3>
+        <p class="text-green-700 font-semibold mb-2">BDT 2,800</p>
+        <button onclick="openForm(this)" data-img="https://www.medieval-shop.co.uk/89398-large_default/zoro-s-black-enma-bamboo-katana-one-piece.jpg" class="bg-blue-600 text-white px-4 py-2 rounded">Buy</button>
+      </div>
+      <div class="product-card" data-sub="all katana">
+        <img src="https://m.media-amazon.com/images/I/41dA5NOFxAL._AC_UF1000,1000_QL80_.jpg" alt="Inosuke's Nichirin Sword">
+        <h3 class="font-bold text-lg mt-2">Inosuke's Nichirin Sword</h3>
+        <p class="text-green-700 font-semibold mb-2">BDT 2,800</p>
+        <button onclick="openForm(this)" data-img="https://m.media-amazon.com/images/I/41dA5NOFxAL._AC_UF1000,1000_QL80_.jpg" class="bg-blue-600 text-white px-4 py-2 rounded">Buy</button>
+      </div>
+      <!-- (Repeat for all other Katana items with correct src, alt, name, price) -->
+      <!-- Bracelets -->
+      <div class="product-card" data-sub="all bracelets">
+        <img src="https://media.takealot.com/covers_images/cbd8090cca754bc6927f6d13b3031b77/s-pdpxl.file" alt="Akatsuki Bracelet">
+        <h3 class="font-bold text-lg mt-2">Akatsuki Bracelet</h3>
+        <p class="text-green-700 font-semibold mb-2">BDT 450</p>
+        <button onclick="openForm(this)" data-img="https://media.takealot.com/covers_images/cbd8090cca754bc6927f6d13b3031b77/s-pdpxl.file" class="bg-blue-600 text-white px-4 py-2 rounded">Buy</button>
+      </div>
+      <!-- Keychains -->
+      <div class="product-card" data-sub="all keychains">
+        <img src="https://thinkdifferent.org.in/wp-content/uploads/2023/03/NP1ohHoyNtLAdyirxWC.jpg" alt="One Piece Key chain">
+        <h3 class="font-bold text-lg mt-2">One Piece Key chain</h3>
+        <p class="text-green-700 font-semibold mb-2">BDT 350</p>
+        <button onclick="openForm(this)" data-img="https://thinkdifferent.org.in/wp-content/uploads/2023/03/NP1ohHoyNtLAdyirxWC.jpg" class="bg-blue-600 text-white px-4 py-2 rounded">Buy</button>
+      </div>
+      <!-- Trading Pack/Cards -->
+      <div class="product-card" data-sub="all trading">
+        <img src="https://static-01.daraz.com.bd/p/a228e2d00e9bb5d1aa4b7c50a82e47b1.jpg" alt="Unique Anime Version UNO">
+        <h3 class="font-bold text-lg mt-2">Unique Anime Version UNO</h3>
+        <p class="text-green-700 font-semibold mb-2">BDT 450</p>
+        <button onclick="openForm(this)" data-img="https://static-01.daraz.com.bd/p/a228e2d00e9bb5d1aa4b7c50a82e47b1.jpg" class="bg-blue-600 text-white px-4 py-2 rounded">Buy</button>
+      </div>
     </div>
+
   </div>
 </section>
+
 
 
 <!-- Clothings Category -->
