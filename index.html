@@ -198,7 +198,7 @@
 <!-- Hobby Shop Category -->
 <section class="category-section">
   <div class="category-background"
-       style="background-image:url('https://i.pinimg.com/originals/c0/26/65/c02665e40a4224f575af74f7bf1e89df.png');"></div>
+       style="background-image:url('https://media.tenor.com/6j0SImNS50UAAAAM/itachi.gif');"></div>
   <div class="category-overlay">
     <h2 class="text-3xl font-bold mb-4">Hobby Shop</h2>
     <div id="hobbyTabs" class="tabs">
@@ -208,17 +208,27 @@
       <div class="tab" data-sub="models">Models</div>
       <div class="tab" data-sub="trading">Trading Pack/Cards</div>
       <div class="tab" data-sub="wallets">Wallets</div>
-        <div class="tab" data-sub="keychains">Keychains</div>
-       <div class="tab" data-sub="Bracelets">Bracelets</div>
+      <div class="tab" data-sub="keychains">Keychains</div>
+      <div class="tab" data-sub="Bracelets">Bracelets</div>
       <div class="tab" data-sub="accessories">Wearing Accessories</div>
       <div id="hobbyBar" class="tab-bar"></div>
     </div>
+
+    <!-- Scrollable Product Row -->
     <div class="flex space-x-6 overflow-x-auto pb-4" id="hobbyProducts">
-<div id="clothingProducts" class="flex overflow-x-auto space-x-4 py-4 px-2">
-      <!-- Hobby Shop products will go here -->
+      <!-- All + Katana -->
+      <!-- (multiple product cards similar to earlier) -->
+      <div class="product-card" data-sub="all katana">…</div>
+      <!-- All + Bracelets -->
+      <div class="product-card" data-sub="all Bracelets">…</div>
+      <!-- All + Keychains -->
+      <div class="product-card" data-sub="all keychains">…</div>
+      <!-- All + Trading -->
+      <div class="product-card" data-sub="all trading">…</div>
     </div>
   </div>
 </section>
+
 
 <!-- Clothings Category -->
 <section class="category-section">
@@ -228,23 +238,23 @@
     <h2 class="text-3xl font-bold mb-4">Clothings and Costumes</h2>
     <div id="clotheTabs" class="tabs">
       <div class="tab active" data-sub="all">All</div>
-      <div class="tab" data-sub="T-Shirts">T-Shirts</div>
-      <div class="tab" data-sub="Shirts">Shirts</div>
-      <div class="tab" data-sub="Jerseys">Jerseys</div>
-      <div class="tab" data-sub="Hoodies">Hoodies</div>
-      <div class="tab" data-sub="Cosplaying">Cosplaying</div>
-      <div class="tab" data-sub="Caps">Caps</div>
-       <div class="tab" data-sub="Bags">Bags</div>
-       <div class="tab" data-sub="Shoes">Shoes</div>
-      
-    
+      <div class="tab" data-sub="Bags">Bags</div>
+      <!-- Other subcategories -->
       <div id="clotheBar" class="tab-bar"></div>
     </div>
+
+    <!-- Scrollable Product Row -->
     <div class="flex space-x-6 overflow-x-auto pb-4" id="clotheProducts">
-      <!-- Hobby Shop products will go here -->
+      <div class="product-card" data-sub="all Bags">
+        <img src="path/to/One_Piece_Back_Pack.png" alt="One Piece Back Pack" class="w-full h-40 object-cover mb-2 rounded">
+        <h3 class="font-bold text-lg">One Piece Back Pack</h3>
+        <p class="text-green-700 font-semibold mb-2">BDT 2600</p>
+        <button onclick="openForm(this)" data-img="path/to/One_Piece_Back_Pack.png" class="bg-blue-600 text-white px-4 py-2 rounded">Buy</button>
+      </div>
     </div>
   </div>
 </section>
+
 
 <!-- Popup Form -->
 <div id="popup" class="popup hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
